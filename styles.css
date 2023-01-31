@@ -1,0 +1,101 @@
+/*Initialize Timeless font*/
+@font-face {
+	font-family: Timeless;
+	src: url("./fonts/Timeless.ttf");
+}
+
+/*Initialize Cormorant font*/
+@font-face {
+	font-family: Cormorant;
+	src: url("./fonts/CormorantInfant-Italic.otf");
+}
+
+/*All text will use Cardo by default*/
+* {
+	font-family: "Cardo", serif;
+}
+
+/*Titles will use Timeless*/
+h1 {
+	font-family: "Timeless", serif;
+}
+
+/*Subtitles will use Cormorant*/
+h2, h3, h4, h5 {
+	font-family: "Cormorant", serif;
+}
+
+/*Buttons will use Timeless*/
+button {
+	font-family: "Timeless", serif;
+}
+
+/*Links will have no text decoration by default*/
+a {
+	text-decoration: none;
+}
+
+/*Make social media items horizontal*/
+.socialMediaIcons > ul {
+	flex-flow: row nowrap;
+}
+
+/*Set carousel height*/
+.carousel .carousel-item {
+	height: 100vh;
+}
+
+/*Ensures images fit into 100vh*/
+.carousel-item img {
+	object-fit: cover;
+	height: 100vh;
+}
+
+/*Add black overlay to the images*/
+.carousel-item:after {
+	background: rgba(0,0,0,0.2);
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	content: "";
+}
+
+/*Remove default arrow from dropdown*/
+.dropdown-toggle::after {
+	content: none;
+}
+
+/*Change dropdown opacity*/
+.dropdown .dropdown-menu {
+	background-color: rgba(255,255,255,0.2);
+}
+
+.dropdown-item {
+	color: #cccccc;
+}
+
+.carousel-caption > h1 {
+	font-size: 5rem;
+}
+
+.carousel-caption > h3 {
+	font-size: 2rem;
+}
+
+.carousel-pager {
+	position: relative;
+	right: 1rem;
+}
+
+.row {
+	min-height: 10vh;
+}
+
+#hero-title {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+}
