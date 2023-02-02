@@ -5,6 +5,7 @@ const track = document.querySelector(".track");
 const imageUrls = ["./images/carousel-1.jfif", "./images/carousel-2.jpg", "./images/carousel-3.jfif", "./images/carousel-4.jpg", "./images/carousel-5.jpg", "./images/carousel-6.jfif", "./images/carousel-7.jfif", "./images/carousel-8.jpg", "./images/carousel-9.jfif"];
 let index = 0;
 let currentPosition = 0;
+let interval = setInterval(cycleRight, 5000);
 
 for (let i = 0; i < imageUrls.length; i++) {
   let image = new Image();
@@ -16,14 +17,26 @@ for (let i = 0; i < imageUrls.length; i++) {
   child.appendChild(image);
 };
 
-prev.addEventListener("click", function() {
+function cycleLeft() {
   currentPosition += 33.33;
   track.style.transform = "translateX(" + currentPosition + "%)";
-});
+};
 
-next.addEventListener("click", function() {
+function cycleRight() {
   currentPosition -= 33.33;
   track.style.transform = "translateX(" + currentPosition + "%)";
+};
+
+prev.addEventListener("click", function(){
+  clearInterval(interval);
+  cycleLeft();
+  interval = setInterval(cycleRight, 5000);
+});
+
+next.addEventListener("click", function(){
+  clearInterval(interval);
+  cycleRight();
+  interval = setInterval(cycleRight, 5000);
 });
 
 //need to convert to vanilla JS
