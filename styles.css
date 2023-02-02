@@ -40,29 +40,6 @@ a {
 	flex-flow: row nowrap;
 }
 
-/*Set carousel height*/
-.carousel .carousel-item {
-	height: 100vh;
-}
-
-/*Ensures images fit into 100vh*/
-.carousel-item img {
-	object-fit: cover;
-	height: 100vh;
-}
-
-/*Add black overlay to the images*/
-.carousel-item:after {
-	background: rgba(0,0,0,0.2);
-	display: block;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	content: "";
-}
-
 /*Remove default arrow from dropdown*/
 .dropdown-toggle::after {
 	content: none;
@@ -70,19 +47,11 @@ a {
 
 /*Change dropdown opacity*/
 .dropdown .dropdown-menu {
-	background-color: rgba(255,255,255,0.2);
+	background-color: rgba(0,0,0,0.2);
 }
 
 .dropdown-item {
 	color: #cccccc;
-}
-
-.carousel-caption > h1 {
-	font-size: 5rem;
-}
-
-.carousel-caption > h3 {
-	font-size: 2rem;
 }
 
 .carousel-pager {
@@ -110,4 +79,62 @@ a {
 
 #hero-description {
 	right: 0;
+}
+
+/*Set carousel height*/
+.carousel-container .item {
+	height: 100%;
+}
+
+.item img {
+	object-fit: cover;
+	height: 100%;
+}
+
+.inner-carousel {
+	overflow: hidden;
+}
+
+/*Add black overlay to the images*/
+.item:after {
+	background: rgba(0,0,0,0.2);
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	content: "";
+}
+
+.track {
+	display: inline-flex;
+	transition: transform 0.5s ease-in-out;
+}
+
+.prev, .next {
+	position: absolute;
+	top: 50%;
+	transform: translatey(-50%);
+	width: 60px;
+	height: 60px;
+	outline: none;
+	cursor: pointer;
+	color: white;
+}
+
+.nav .prev {
+	left: 30px;
+}
+
+.nav .prev.hide {
+	display: none;
+}
+
+.nav .next {
+	right: 30px;
+}
+
+.nav .next.hide {
+	display: none;
 }
